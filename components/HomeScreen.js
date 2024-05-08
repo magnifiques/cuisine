@@ -6,7 +6,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
   ChevronDownIcon,
@@ -16,16 +16,36 @@ import {
 } from "react-native-heroicons/outline";
 import CategoriesSection from "./Screens/CategoriesSection";
 import FeaturedRows from "./Screens/FeaturedSection";
+import client from "../sanity";
 // import { SmartPhone } from "../constants";
 
 export default function HomeScreen() {
   const smartPhone = require("../assets/smartphone.png");
   const navigation = useNavigation();
+  const [featuredCategory, setFeaturedCategory] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
+  }, []);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == 'featured'] {
+      ...,
+      restaurant[] => {
+        ...,
+        dish[] => {
+        
+        }
+      }
+    }`
+      )
+      .then((data) => {
+        setFeaturedCategory(data);
+      });
   }, []);
 
   return (
@@ -58,11 +78,21 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingBottom: 20 }}
       >
         <CategoriesSection />
-        <FeaturedRows
-          title="Featured1"
-          description="lorem sadsadsad sdasadsad"
-        />
+        {featuredCategory?.map((category) => {
+          return (
+            <FeaturedRows
+              id={category._id}
+              key={category._id}
+              title={category.name}
+              description={category.brief}
+              restaurants={category.restaurants}
+            />
+          );
+        })}
       </ScrollView>
+      <View>
+        <Text>Wro</Text>
+      </View>
     </SafeAreaView>
   );
 }
