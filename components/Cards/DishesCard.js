@@ -1,20 +1,30 @@
-import {
-  TouchableOpacity,
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-} from "react-native";
+import { TouchableOpacity, Text, View, Image } from "react-native";
 import React, { useState } from "react";
-import Currency from "react-currency-formatter";
 import { urlFor } from "../../sanity";
 import {
   MinusCircleIcon,
   PlusCircleIcon,
 } from "react-native-heroicons/outline";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  selectCartItemsWithId,
+  removeFromCart,
+} from "../../slices/cartSlice";
 
 export default function DishesCard({ id, name, brief, image, price }) {
   const [isPressed, setIsPressed] = useState(false);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => selectCartItemsWithId(state, id));
+
+  const handlePress = () => {
+    dispatch(addToCart({ id, name, brief, price, image }));
+  };
+
+  const removeItem = () => {
+    if (!cartItems.length > 0) return;
+    dispatch(removeFromCart({ id }));
+  };
   return (
     <>
       <TouchableOpacity
@@ -28,9 +38,7 @@ export default function DishesCard({ id, name, brief, image, price }) {
             <Text className="font-bold text-lg mb-1">{name}</Text>
             <Text className="text-gray-400">{brief}</Text>
 
-            <Text className="text-gray-800 font-bold pt-2">
-              <Currency quantity={price} currency="CAD" />
-            </Text>
+            <Text className="text-gray-800 font-bold pt-2">${price}</Text>
           </View>
           <View>
             <Image
@@ -45,9 +53,18 @@ export default function DishesCard({ id, name, brief, image, price }) {
       {isPressed && (
         <View className="bg-white px-4">
           <TouchableOpacity className="flex-row items-center space-x-2 pb-3">
-            <MinusCircleIcon size={40} color="#D862BC" />
-            <Text>0</Text>
-            <PlusCircleIcon size={40} color="#D862BC" />
+            <MinusCircleIcon
+              disabled={!cartItems.length}
+              size={40}
+              color={cartItems.length > 0 ? "#D862BC" : "gray"}
+              onPress={() => removeItem()}
+            />
+            <Text>{cartItems.length}</Text>
+            <PlusCircleIcon
+              size={40}
+              color="#D862BC"
+              onPress={() => handlePress()}
+            />
           </TouchableOpacity>
         </View>
       )}
