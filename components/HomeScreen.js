@@ -4,6 +4,7 @@ import {
   View,
   Text,
   TextInput,
+  FlatList,
   ScrollView,
 } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -55,10 +56,10 @@ export default function HomeScreen() {
         <View className="flex-1">
           <Text className="font-bold text-gray-400 text-xs">Deliver Now</Text>
           <Text className="font-bold text-xl">
-            Current Location {<ChevronDownIcon size={20} color="#00CCBB" />}
+            Current Location {<ChevronDownIcon size={20} color="#D862BC" />}
           </Text>
         </View>
-        <UserCircleIcon size={30} color="#00CCBB" />
+        <UserCircleIcon size={30} color="#D862BC" />
       </View>
 
       {/* Search bar */}
@@ -70,26 +71,25 @@ export default function HomeScreen() {
             keyboardType="default"
           />
         </View>
-        <AdjustmentsVerticalIcon size={30} color="#00CCBB" />
+        <AdjustmentsVerticalIcon size={30} color="#D862BC" />
       </View>
 
-      <ScrollView
-        className="bg-gray-100"
-        contentContainerStyle={{ paddingBottom: 20 }}
-      >
-        <CategoriesSection />
-        {featuredCategory?.map((category) => {
-          return (
+      <View className="bg-gray-200">
+        <FlatList
+          contentContainerStyle={{ paddingBottom: 140 }}
+          data={featuredCategory}
+          keyExtractor={(item) => item._id}
+          renderItem={({ item }) => (
             <FeaturedRows
-              id={category._id}
-              key={category._id}
-              title={category.name}
-              description={category.brief}
-              restaurants={category.restaurants}
+              id={item._id}
+              key={item._id}
+              title={item.name}
+              description={item.brief}
+              restaurants={item.restaurants}
             />
-          );
-        })}
-      </ScrollView>
+          )}
+        />
+      </View>
       <View>
         <Text>Wro</Text>
       </View>

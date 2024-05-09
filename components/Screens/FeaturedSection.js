@@ -29,7 +29,7 @@ export default function FeaturedRows({ title, description, id }) {
     <View className="flex justify-center py-3">
       <View className="mt-4 flex-row items-center justify-between px-4">
         <Text className="font-bold text-xl">{title}</Text>
-        <ArrowRightIcon size={20} color="#00ccbb" />
+        <ArrowRightIcon size={20} color="#D862BC" />
       </View>
       <Text className="text-md text-gray-500 px-4 py-2">{description}</Text>
 
