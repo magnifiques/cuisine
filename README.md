@@ -56,8 +56,7 @@ Scan the QR code with the Expo Go app to open Cuisine directly on your device. E
    npm expo start
 
 ## Links
-Project Link: Cuisine on Expo
-GitHub Repository: Cuisine GitHub Repo
+Project Link: [Cuisine on Expo](https://expo.dev/accounts/vapit/projects/cuisine/updates/30b518d1-40e8-4e79-b5d4-01e636634dc7)
 
 ## What’s Next?
 With Cuisine, you can explore and order from a wide variety of restaurants in Toronto, all from the convenience of your phone. I’m excited to continue refining the app and exploring new possibilities in mobile development.
@@ -65,3 +64,6 @@ With Cuisine, you can explore and order from a wide variety of restaurants in To
 I’d love to connect with fellow developers or anyone interested in mobile app development. Let’s share ideas and insights!
 
 Feel free to reach out if you have any questions or feedback.
+
+### Contact
+Arpit Vaghela - [LinkedIn](https://www.linkedin.com/in/arpitvaghela)
