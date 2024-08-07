@@ -10,9 +10,11 @@ Cuisine is designed to make ordering food easy and comfortable. Whether you’re
 - Around 75 restaurants across Toronto to choose from, ensuring you have various dining options.
 
 # A Bit of Backstory
-My journey into mobile app development started with Android Studio, but I found the process quite complex and challenging. The need to master Java for Android and Swift for iOS seemed overwhelming, and I eventually stopped learning mobile app development altogether.
+My journey into mobile app development started with Android Studio, but the process was quite complex and challenging. The need to master Java for Android and Swift for iOS seemed overwhelming, and I eventually stopped learning mobile app development altogether.
 
 However, after 2 years, I was introduced to Expo and React Native, which reignited my interest and passion for mobile development.
+
+![2024-08-06 23 12 45](https://github.com/user-attachments/assets/4761b1dd-d276-46c9-b968-33aa2c818e0f)
 
 # Why I’m Excited About This Approach
 - Unified Development: I can build cross-platform apps using JavaScript and React without learning multiple languages. This has made the development process much more enjoyable and efficient.
@@ -30,6 +32,8 @@ However, after 2 years, I was introduced to Expo and React Native, which reignit
 - react-native-progress
 - react-native-svg
 - react-redux
+
+![2024-08-06 23 12 17](https://github.com/user-attachments/assets/58fe0dab-87a2-424c-a04a-4a2eefdd4c48)
 
 ## Try It Out
 There are a couple of ways to check out Cuisine:
