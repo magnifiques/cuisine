@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectCartTotal, selectCartItems } from "../slices/cartSlice";
 import { useNavigation } from "@react-navigation/native";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 
 export default function BasketIcon() {
   const cartItems = useSelector(selectCartItems);
@@ -25,7 +25,7 @@ export default function BasketIcon() {
           View Cart
         </Text>
         <Text className="text-gray-800 text-lg font-extrabold">
-          <Currency currency="CAD" quantity={cartTotal} />
+          {/* <Currency currency="CAD" quantity={cartTotal} /> */}
         </Text>
       </TouchableOpacity>
     </View>

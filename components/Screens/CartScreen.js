@@ -16,7 +16,7 @@ import {
   selectCartTotal,
 } from "../../slices/cartSlice";
 import { urlFor } from "../../sanity";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 
 export default function CartScreen() {
   const smartPhone = require("../../assets/smartphone.png");
@@ -71,7 +71,7 @@ export default function CartScreen() {
               />
               <Text className="flex-1">{items[0].name}</Text>
               <Text className="font-semibold">
-                <Currency quantity={items[0].price} currency="CAD" />
+                {/* <Currency quantity={items[0].price} currency="CAD" /> */}
               </Text>
 
               <TouchableOpacity>
@@ -89,32 +89,35 @@ export default function CartScreen() {
           <View className="flex-row justify-between">
             <Text className="text-gray-500">Subtotal</Text>
             <Text className="font-bold">
-              <Currency quantity={cartTotal} currency="CAD" />
+              {/* <Currency quantity={cartTotal} currency="CAD" /> */}
             </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-500">Delivery Fees</Text>
             <Text className="font-bold">
-              <Currency quantity={5.99} currency="CAD" />
+              {/* <Currency quantity={5.99} currency="CAD" /> */}
             </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-500">Additional Taxes</Text>
             <Text className="font-bold">
-              <Currency quantity={5.99} currency="CAD" />
+              {/* <Currency quantity={5.99} currency="CAD" /> */}
             </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-500">Order Total</Text>
             <Text className="font-bold">
-              <Currency quantity={cartTotal + 11.98} currency="CAD" />
+              {/* <Currency quantity={cartTotal + 11.98} currency="CAD" /> */}
             </Text>
           </View>
 
-          <TouchableOpacity className="rounded-lg bg-[#FFC100] p-4 ">
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Processing")}
+            className="rounded-lg bg-[#FFC100] p-4 "
+          >
             <Text className="text-center text-lg font-semibold">
               Place Order
             </Text>

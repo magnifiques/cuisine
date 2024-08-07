@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import CategoriesCard from "../Cards/CategoriesCard";
 import client, { urlFor } from "../../sanity";
 
-export default function CategoriesSection() {
+export default function CategoriesSection({ setSelectedCategory }) {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     client
@@ -28,6 +28,7 @@ export default function CategoriesSection() {
             id={category._id}
             title={category.name}
             imgUrl={urlFor(category.image).width(200).url()}
+            setSelectedCategory={setSelectedCategory}
           />
         );
       })}

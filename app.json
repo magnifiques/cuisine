@@ -2,27 +2,44 @@
   "expo": {
     "name": "cuisine",
     "slug": "cuisine",
+    "owner": "vapit",
     "version": "1.0.0",
+    "description": "Get you desired dish at the doorstep of your house!",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/smartphone.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vapit.cuisine"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vapit.cuisine"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b2e132ff-1576-4bca-94fd-7ff8cc08b249"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b2e132ff-1576-4bca-94fd-7ff8cc08b249"
     }
   }
 }

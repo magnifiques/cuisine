@@ -19,7 +19,7 @@ export default function RestaurantsCard({
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      className="bg-white mr-3 shadow"
+      className="bg-white mr-3"
       onPress={() =>
         navigation.navigate("Restaurant", {
           id,
@@ -49,7 +49,7 @@ export default function RestaurantsCard({
         </View>
         <View className="flex-row items-center space-x-1">
           <MapPinIcon color="gray" opacity={0.4} size={22} />
-          <Text className="text-xs text-gray-500">Nearby · {address}</Text>
+          <Text className="text-xs text-gray-500">{address}</Text>
         </View>
       </View>
     </TouchableOpacity>
