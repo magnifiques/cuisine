@@ -19,24 +19,37 @@ However, after 2 years, I was introduced to Expo and React Native, which reignit
 - Familiar Tools: Leveraging my experience with JavaScript and React allowed me to dive into mobile development easily and confidently.
 
 ## Tech Stack Highlights
-React Native: For a seamless mobile experience.
-Expo: To simplify development and deployment.
-Key Dependencies
-@react-navigation/native
-@reduxjs/toolkit
-react-native-maps
-react-native-animatable
-react-native-progress
-react-native-svg
-react-redux
+- React Native: For a seamless mobile experience.
+- Expo: To simplify development and deployment.
+
+#### Key Dependencies
+- @react-navigation/native
+- @reduxjs/toolkit
+- react-native-maps
+- react-native-animatable
+- react-native-progress
+- react-native-svg
+- react-redux
 
 ## Try It Out
 There are a couple of ways to check out Cuisine:
-1. Using Expo Go
+### 1. Using Expo Go
 Download the Expo Go app from the iOS App Store or Android Play Store.
 Visit the project link, then click on the preview button, where you’ll find a QR code.
 Scan the QR code with the Expo Go app to open Cuisine directly on your device. Easy!
-2. From GitHub
+
+### 2. From GitHub
+1. Clone the repo
+   ```sh
+   git clone https://github.com/magnifiques/cuisine.git
+2. Install NPM packages
+   ```sh
+   npm install
+   or
+   yarn install
+3. Run the project using Expo
+   ```sh
+   npm expo start
 
 ## Links
 Project Link: Cuisine on Expo
